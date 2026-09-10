@@ -13,14 +13,14 @@ code, not just call a library.
 - [x] **1. Data loading** — parse the MNIST IDX binary format by hand  
   - [x] `load_labels`: read magic number + count header, then one byte per label  
   - [x] `load_images`: read magic/count/rows/cols header, then 784 bytes per image  
-- [ ] **2. `Matrix` type** — flat `Vec<f64>`, row-major, backing all the math  
+- [x] **2. `Matrix` type** — flat `Vec<f64>`, row-major, backing all the math  
   - [x] struct + `new` / `get` / `set`  
   - [x] `add`  
   - [x] `sub`  
   - [x] elementwise `mul` (Hadamard)  
-  - [ ] `transpose`  
-  - [ ] `matmul`  
-  - [ ] `apply` (map a function over every element)  
+  - [x] `transpose`  
+  - [x] `matmul`  
+  - [x] `apply` (map a function over every element)  
 - [ ] **3. Network structure** — `Layer` (weights + biases) and `Network` (`Vec<Layer>`), forward pass  
 - [ ] **4. Activation functions** — sigmoid/ReLU + softmax, plus their derivatives  
 - [ ] **5. Loss function** — cross-entropy loss + its gradient  

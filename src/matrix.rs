@@ -60,4 +60,47 @@ impl Matrix {
 
         result
     }
+
+    pub fn trans(&self) -> Matrix {
+        let mut result = Matrix::new(self.cols, self.rows);
+        for i in 0..self.rows {
+            for j in 0..self.cols {
+                result.set(j, i, self.get(i, j));
+            }
+        }
+
+        result
+    }
+
+    pub fn matmul(&self, other: &Matrix) -> Matrix {
+        if self.cols != other.rows {
+            panic!("{:?}", self)
+        }
+
+        let mut result = Matrix::new(self.rows, other.cols);
+
+        let mut sum = 0.0;
+
+        for i in 0..other.cols {
+            for j in 0..self.rows {
+                for k in 0..self.cols {
+                    sum += self.get(j, k) * other.get(k, i);
+                }
+                result.set(j, i, sum);
+                sum = 0.0;
+            }
+        }
+
+        result
+    }
+
+    pub fn apply(&self, f: fn(f64) -> f64) -> Matrix {
+        let mut result = Matrix::new(self.rows, self.cols);
+
+        for i in 0..(self.rows * self.cols) {
+            result.data[i] = f(self.data[i]);
+        }
+
+        result
+    }
 }

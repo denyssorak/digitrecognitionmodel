@@ -40,30 +40,46 @@ fn main() -> std::io::Result<()> {
     //  println!("{:?}", &images[0..10]);
     //  println!("{:?}", &images[200..210]);
     //  println!("{:?}", &images[300..310]);
-
-    let mut m1 = Matrix::new(2, 3);
-    m1.set(0, 0, 1.0);
-    m1.set(0, 2, 5.0);
-    m1.set(1, 1, 9.0);
-
     /*
-        println!("{:?}", m.get(0, 0));
-        println!("{:?}", m.get(0, 2));
-        println!("{:?}", m.get(1, 1));
-        println!("{:?}", m.get(1, 0));
+        let mut m1 = Matrix::new(2, 3);
+        m1.set(0, 0, 1.0);
+        m1.set(0, 1, 2.0);
+        m1.set(0, 2, 3.0);
+        m1.set(1, 0, 4.0);
+        m1.set(1, 1, 5.0);
+        m1.set(1, 2, 6.0);
+
+        let mut m2 = Matrix::new(3, 4);
+        m2.set(0, 0, 1.0);
+        m2.set(0, 1, 2.0);
+        m2.set(0, 2, 3.0);
+        m2.set(0, 3, 4.0);
+        m2.set(1, 0, 5.0);
+        m2.set(1, 1, 6.0);
+        m2.set(1, 2, 7.0);
+        m2.set(1, 3, 8.0);
+        m2.set(2, 0, 9.0);
+        m2.set(2, 1, 10.0);
+        m2.set(2, 2, 11.0);
+        m2.set(2, 3, 12.0);
+
+
+        let result = m1.matmul(&m2);
+
+        println!(
+            "{:?} {:?} {:?} {:?}",
+            result.get(0, 0),
+            result.get(0, 1),
+            result.get(0, 2),
+            result.get(0, 3)
+        );
+        println!(
+            "{:?} {:?} {:?} {:?}",
+            result.get(1, 0),
+            result.get(1, 1),
+            result.get(1, 2),
+            result.get(1, 3)
+        );
     */
-
-    let mut m2 = Matrix::new(2, 3);
-    m2.set(0, 0, 2.0);
-    m2.set(0, 2, 5.0);
-    m2.set(1, 1, 1.0);
-
-    let result = m1.add(&m2);
-
-    println!("{:?}", result.get(0, 0));
-    println!("{:?}", result.get(0, 2));
-    println!("{:?}", result.get(1, 1));
-    println!("{:?}", result.get(1, 0));
-
     Ok(())
 }
